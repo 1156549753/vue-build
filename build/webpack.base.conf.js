@@ -22,9 +22,14 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        use: 'babel-loader',
+        loader:'babel-loader',
         /* 排除模块安装目录的文件 */
-        exclude: /node_modules/
+        exclude: /node_modules/,
+        options:{
+
+          plugins:['syntax-dynamic-import']
+          
+          },
       },
       {
         test: /\.css$/,
